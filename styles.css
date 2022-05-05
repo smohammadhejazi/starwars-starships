@@ -1,3 +1,17 @@
+/* 
+    this block sets the style for body tab
+
+    make display flex and center elements inside it
+    horizontally and vertically center
+
+    we set min-height and margin to zero so the body tag
+    covers all of the screen height
+
+    then set background-color and text colors
+    background picture url is given and background is set
+    to not repeat if it doesnt cover the whole screen, also
+    center the position of background relative to body position
+ */
 body {
     display: flex;
     justify-content: center;
@@ -11,42 +25,67 @@ body {
     background-position: center;
 }
 
+/* 
+    this block makse background responsive
+    if screen width is bigger than 1920px then background-size
+    should be set to cover. this makes the background to keep its
+    size and to not get any more smaller than its original size 
+    on the screen as we zoom out.
+    so when width smaller 1920px the background is zoomed in the middle
+    and when its bigger than the image width which is 1920px, it stays
+    the same and covers the screen
+*/
 @media screen and (min-width: 1920px){
     body {
         background-size: cover;
     }
 }
 
+/* 
+    this block sets the style for content-box that holds everything
+    make 
+
+    make display flex 
+    put space between every edge of elements to be the same align the
+    flex axis
+    set align-items to center so that items are centered vertically
+
+    add some padding and set font-size
+
+    background color is the same as body but has the alpha channel
+    to #D0 to make it transparent 
+
+    we set width and height to 80vw and 80vh to cover 80% of the screen
+    
+    overflow is auto and makes it that when the content, usually texts
+    in this case, wants to overflow the content-box, it will contain it
+    inside and makes scroll bars visible
+*/
 #content-box {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     padding: 1em 2em;
     font-size: 2em;
-    color: white;
     background-color: #282c34D0;
     width: 80vw;
     height: 80vh;
     overflow: auto;
 }
 
-#left-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 20%;
-    word-wrap: break-word;
-    overflow: auto;
-}
+/* 
+    set styles for the table
 
-#right-box{
-    width: 80%;
-    height: 100%;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
+    apply some border and border radius to the table 
+    
+    margin is set to (auto auto) this way the browser will figure out
+    the margins of the table and make it so that it the table is in 
+    the center of the content-box
 
+    align all the texts in each cell in the center
+
+    width and height are 100% of the content-box to cover all of it
+ */
 table {
     border: 0.1em solid white;
     border-radius: 0.1em;
@@ -56,6 +95,24 @@ table {
     height: 100%;
 }
 
+
+/* 
+    sets padding of each cell in the body of the table
+*/
+td {
+    padding: 20px;
+}
+
+
+/* 
+    sets the style for buttons in the table (starships button)
+    
+    set the width and height
+
+    apply font-size
+
+    set text to be in the middle of button horizontally and vertically
+*/
 .table-button {
     width: 8em;
     height: 4em;
@@ -64,21 +121,58 @@ table {
     vertical-align: middle
 }
 
-button {
-    width: 5.5em;
-    height: 2em;
-    text-align: center; 
-    vertical-align: middle
+/* 
+    this block sets style for the left main box of the second page
+    
+    display is flex and the direction is vertical
+
+    we align items to be in center horizontally
+
+    set width to be 20% of the content-box
+
+    apply some right margin
+
+    set font size
+*/
+#left-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20%;
+    margin-right: 1em;
+    font-size: 0.8em;
 }
 
+/* 
+    set margin of the right and left side headings to zero
+*/
+.heading {
+    margin-top: 0em;
+}
+
+/* 
+    set styles fo the page index element
+
+    set padding and font size
+
+    center text horizontally and vertically in the div
+*/
 #page-index {
-    width: 1em;
-    height: 1em;
+    padding: 0em 0.5em;
     font-size: 1em;
     text-align: center; 
     vertical-align: middle
 }
 
+/* 
+    set styles for control-box that contains next, prev buttons and page index
+
+    set display to flex and direction to horizontal
+
+    align item inside vertiaclly in the center
+
+    add some padding to bottom
+*/
 #control-box {
     display: flex;
     flex-direction: row;
@@ -86,6 +180,37 @@ button {
     padding-bottom: 0.5em;
 }
 
-th, td {
-    padding: 20px;
+/* 
+    set styles for right box in the content-box
+
+    set width to be 80% of the content-box
+
+    set white-space to pre-wrap so that '\n' char is not ignored by html
+
+    set word-wrap to break-word, this makes it that when we reach the 
+    end of the left-box, texts break and go to the next line
+
+    set font size
+*/
+
+#right-box{
+    width: 80%;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow: auto;
+    font-size: 0.8em;
+}
+
+/* 
+    style control button, next prev back buttons
+
+    set width and height
+
+    center text vertically and horizontally 
+ */
+.control-button {
+    width: 5.5em;
+    height: 2em;
+    text-align: center; 
+    vertical-align: middle
 }

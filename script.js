@@ -164,21 +164,23 @@ const makeStarshipsPage = async (starshipsAPIs) => {
     // set id for left side elements
     leftSide.id = "left-box";
     leftHeading.textContent = "StarShips";
+    leftHeading.className = "heading";
     shipsList.id = "ships-list";
     controlBox.id = "control-box";
     nextButton.textContent = "Next";
-    nextButton.class = "control-button";
+    nextButton.className = "control-button";
     nextButton.id = "next-button";
     prevButton.textContent = "Previous";
-    prevButton.class = "control-button";
+    prevButton.className = "control-button";
     prevButton.id = "prev-button";
     backButton.textContent = "Back";
-    backButton.class = "control-button";
+    backButton.className = "control-button";
     pageIndexBox.id = "page-index"
 
     // set id for right side elements
     rightSide.id = "right-box";
     rightHeading.id = "right-heading";
+    rightHeading.className = "heading";
     shipInfo.id = "ship-info";
 
     // add event listeners to buttons
